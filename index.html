@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>رحلاتي | منصة السفر</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <div class="brand"><span class="brand-mark">✦</span> رحلاتي</div>
+  <nav>
+    <a href="#hotels">الفنادق</a>
+    <a href="#offers">العروض</a>
+    <a href="#about">من نحن</a>
+    <a href="#contact">اتصل بنا</a>
+  </nav>
+  <button class="login" onclick="showMessage('صفحة تسجيل الدخول جاهزة للربط لاحقًا.')">تسجيل الدخول</button>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-content">
+    <span class="eyebrow">اكتشف • احجز • سافر</span>
+    <h1>رحلتك القادمة<br><strong>تبدأ من هنا</strong></h1>
+    <p>ابحث عن الفندق المناسب واستكشف عروض السفر بسهولة.</p>
+
+    <div class="search-box">
+      <div class="field">
+        <label>المكان المقصود</label>
+        <input id="destination" list="cities" placeholder="مثال: طرابلس">
+        <datalist id="cities">
+          <option value="طرابلس"><option value="بنغازي"><option value="مصراتة">
+          <option value="تونس"><option value="إسطنبول"><option value="دبي">
+        </datalist>
+      </div>
+      <div class="field">
+        <label>تاريخ الوصول</label>
+        <input id="checkin" type="date">
+      </div>
+      <div class="field">
+        <label>تاريخ المغادرة</label>
+        <input id="checkout" type="date">
+      </div>
+      <div class="field">
+        <label>المسافرون</label>
+        <select id="guests">
+          <option value="1">1 مسافر</option><option value="2" selected>2 مسافرين</option>
+          <option value="3">3 مسافرين</option><option value="4">4 مسافرين</option>
+          <option value="5">5 مسافرين</option><option value="6">6 مسافرين</option>
+        </select>
+      </div>
+      <button class="search-btn" onclick="searchHotels()">بحث</button>
+    </div>
+  </div>
+</section>
+
+<section id="hotels" class="section">
+  <div class="section-head">
+    <div><span class="eyebrow dark">اختياراتنا</span><h2>فنادق مميزة</h2></div>
+    <button class="outline" onclick="filterAll()">عرض الكل</button>
+  </div>
+  <div id="hotelGrid" class="grid"></div>
+</section>
+
+<section id="offers" class="offers">
+  <div>
+    <span class="eyebrow">عروض خاصة</span>
+    <h2>وفّر أكثر في رحلتك القادمة</h2>
+    <p>عروض تجريبية قابلة للتعديل عند ربط الموقع بقاعدة بيانات حقيقية.</p>
+    <button class="light-btn" onclick="showMessage('تم اختيار العرض!')">استكشف العروض</button>
+  </div>
+  <div class="offer-card"><span>خصم</span><strong>25%</strong><small>على إقامات مختارة</small></div>
+</section>
+
+<section id="about" class="features section">
+  <div class="section-head"><div><span class="eyebrow dark">لماذا رحلاتي؟</span><h2>كل ما تحتاجه للسفر</h2></div></div>
+  <div class="feature-grid">
+    <article><div class="icon">⌕</div><h3>بحث سريع</h3><p>ابحث عن الوجهة والفندق والتواريخ في مكان واحد.</p></article>
+    <article><div class="icon">✓</div><h3>حجز بسيط</h3><p>واجهة واضحة مصممة لتقليل الخطوات غير الضرورية.</p></article>
+    <article><div class="icon">★</div><h3>اختيارات متنوعة</h3><p>بطاقات فنادق وعروض قابلة للتوسع حسب بياناتك.</p></article>
+  </div>
+</section>
+</main>
+
+<footer id="contact">
+  <div class="footer-brand">رحلاتي</div>
+  <p>منصة سفر تجريبية مستقلة.</p>
+  <div class="footer-links"><span>طرابلس، ليبيا</span><span>info@rihlati.example</span></div>
+  <small>© 2026 رحلاتي</small>
+</footer>
+
+<div id="toast" class="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
